@@ -25,5 +25,6 @@
 <p>Hello <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>, secret content!<br /> </p>
 <a href="memberlist.php">Memberlist</a><br /> 
 <a href="edit_osuname.php">Edit osu! Username</a><br />
-<a href="edit_account.php">Edit Account</a><br /> 
-<a href="logout.php">Logout</a>
+<a href="edit_account.php">Edit Account</a><br /><br />
+<a href="logout.php">Logout</a><br />
+<a href="upload/upload.php">*NEW!* Upload Images!</a>
