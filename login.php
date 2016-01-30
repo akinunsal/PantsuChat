@@ -107,17 +107,39 @@
     } 
      
 ?> 
+
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style-login.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-<h1>Login</h1> 
-<form action="login.php" method="post"> 
-    Username:<br /> 
-    <input type="text" name="username" value="<?php echo $submitted_username; ?>" /> 
-    <br /><br /> 
-    Password:<br /> 
-    <input type="password" name="password" value="" /> 
-    <br /><br /> 
-    <input type="submit" value="Login" /> 
-</form> 
-<a href="register.php">Register</a>
+<body>
+<div id="horizontal-scroll">
+<div id="wrapper">
+<div class='container'>
+  <header>
+    <h2>Sign up, it’s free (jk who sells shit for free)</h2>
+    <p>It is a long established fact that a reptilian will be distracted</p>
+  </header>
+  <!-- / START:DASH Form -->
+  <div class='form'>
+    <form action="login.php" method="post">
+      <div class='field'>
+        <label for='username'>Username</label>
+        <input id='username' name='username' type='text' value="<?php echo $submitted_username; ?>">
+      </div>
+      <div class='field'>
+        <label for='password'>Password</label>
+        <input id='password' name='password' type='password' value=''>
+      </div>
+      <button>Login</button>
+    </form>
+  </div>
+  <!-- / END Form -->
+  <footer>
+    Made with
+    <i class='fa fa-heart animated infinite pulse'>from outer reptilian space</i>
+  </footer>
+</div>
+    </div>
+    </div>
+</body>

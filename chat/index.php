@@ -1,43 +1,55 @@
-<?php
-    
-    /* 
-    probably a stupid idea but i didnt set document_root for login.php since
-    it's in the same folder as this file. watch out for this if you're stealing
-    my code, which by the way you shouldn't do since it's mean and unfair,
-    it might be bad but i worked hours on it ;_;
-    */
-    include($_SERVER['DOCUMENT_ROOT'].'/common.php');
-    include("login.php");
+<?php 
+    session_start();
 
+    if (!isset($_SESSION['userid'])): 
 ?>
-<!DOCTYPE html>
-<html>
- <head>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="chat.js"></script>
-  <link href="chat.css" rel="stylesheet"/>
-  <title>PHP Group Chat Test With jQuery & AJAX</title>
- </head>
- <body>
-  <div id="content" style="margin-top:10px;height:100%;">
-   <center><h1>Pantsu Group Chat</h1></center>
-   <div class="chat">
-    <div class="users">
-     <?
-    include("users.php");
-        ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chat2</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2" type="text/javascript"></script>
+    <script type="text/javascript" src="check.js"></script>
+</head>
+
+<body>
+
+    <div id="page-wrap"> 
+    
+    	<div id="header">
+        	<h1><a href="/examples/Chat2/">Chat v2</a></h1>
+        </div>
+        
+    	<div id="section">
+        	<form method="post" action="jumpin.php">
+            	<label>Desired Username:</label>
+                <div>
+                	<input type="text" id="userid" name="userid" />
+                    <input type="submit" value="Check" id="jumpin" />
+            	</div>
+            </form>
+        </div>
+        
+        <div id="status">
+        	<?php if (isset($_GET['error'])): ?>
+        		<!-- Display error when returning with error URL param? -->
+        	<?php endif;?>
+        </div>
+        
     </div>
-    <div class="chatbox">
-     <?
-     if(isset($_SESSION['user'])){
-      include("chatbox.php");
-     }else{
-      $display_case=true;
-      include("login.php");
-     }
-     ?>
-    </div>
-   </div>
-  </div>
- </body>
-</html> 
+    
+</body>
+
+</html>
+
+<?php 
+    else:
+        require_once("chatrooms.php");
+    endif; 
+?>

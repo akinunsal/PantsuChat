@@ -1,9 +1,17 @@
-body {
-    background-image: url("backdrop.png");
-    background-repeat: repeat-x repeat-y;
-    background-color: #cccccc;
-}
+body {margin:0;padding:0;}
 
+#horizontal-scroll {
+	width: 100%; 
+	height: 100%; 
+	background-image: url(backdrop.png);
+	background-position: 0px 0px;
+	background-repeat: repeat-x repeat-y;
+	animation: animatedBackground 10s linear infinite;
+}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
 pre{
 	display:block;
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;

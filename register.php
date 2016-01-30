@@ -189,21 +189,52 @@
 ?> 
 
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style-register.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-
-<div class="container">
-<h1>Register</h1> 
-<form action="register.php" method="post"> 
-    Username:<br /> 
-    <input type="text" name="username" value="" /> 
-    <br /><br /> 
-    E-Mail:<br /> 
-    <input type="text" name="email" value="" /> 
-    <br /><br /> 
-    Password:<br /> 
-    <input type="password" name="password" value="" /> 
-    <br /><br /> 
-    <input type="submit" value="Register" /> 
-</form>
+<body>
+<div id="horizontal-scroll">
+<div id="wrapper">
+<div class='container'>
+  <header>
+    <h2>Sign up, it’s free (leafythesellouty)</h2>
+    <p>It is a long established fact that a reptilian will be distracted</p>
+  </header>
+  <!-- / START:DASH Form -->
+  <div class='form'>
+    <form action="register.php" method="post" onsubmit="if(!this.form.checkbox.checked) { alert('Please indicate that you have skipped and completely ignored the Terms and Conditions and Privacy Policy'); return false; }">
+      <div class='field'>
+        <label for='username'>Username</label>
+        <input id='username' name='username' type='text' value='Frank Bank'>
+      </div>
+      <div class='field'>
+        <label for='email'>Email Address</label>
+        <input id='email' name='email' type='email' value='hello@jantran.meh'>
+      </div>
+      <div class='field'>
+        <label for='password'>Password</label>
+        <input id='password' name='password' type='password' value='password'>
+      </div>
+      <div class='field'>
+        <label for='rpassword'>Repeat Password</label>
+        <input id='rpassword' name='rpassword' type='password' value='password'>
+      </div>
+      <div class='checkbox'>
+        <input id='checkbox' name='checkbox' type='checkbox' value='check'>
+        <label for='checkbox'>
+          THIS BUTTON DOESNT WORK ANYWAY DON'T BOTHER By signing up, you agree that you will completely skip and ignore the
+          <a href='#'>terms and conditions</a>
+        </label>
+      </div>
+      <button>Sign Up</button>
+    </form>
+  </div>
+  <!-- / END Form -->
+  <footer>
+    Made with
+    <i class='fa fa-heart animated infinite pulse'>from outer reptilian space</i>
+  </footer>
+</div>    
 </div>
+</div>
+</body>

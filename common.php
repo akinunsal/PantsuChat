@@ -1,4 +1,4 @@
-    <?php 
+<?php 
 
     // These variables define the connection information for your MySQL database 
     $username = "u498161268_pants"; 
