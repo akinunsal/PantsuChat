@@ -25,16 +25,6 @@
 	});
 -->
 </script>
-
-
-<div id="cp_widget_f1c5a7b2-d64c-43ad-8582-cdb1b6712d4e">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cp_widget_f1c5a7b2-d64c-43ad-8582-cdb1b6712d4e"; cpo["_fid"] = "AkAAKAdT1YTj";
-var _cpmp = _cpmp || []; _cpmp.push(cpo);
-(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
-var c = document.getElementsByTagName("script")[0];
-c.parentNode.insertBefore(cp, c); })(); </script><noscript>Powered by Cincopa <a href='http://pantsuchat.tk'>for use with PantsuChat</a><span>Desu Music</span></noscript>
-    
     
 <?php
     if(empty($_SESSION['user']))  {
