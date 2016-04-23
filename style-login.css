@@ -1,202 +1,134 @@
-@import "compass/css3";
-
-/* Form Styles */
 body {
-  background: #f8f8f8;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.container {
-  width: 600px;
-  margin: 80px auto;
-}
-.container header {
-  text-align: center;
-}
-.container header h2 {
-  color: #333;
-  font-size: 22px;
-  font-weight: 300;
-  line-height: 24px;
-  margin: 0 0 15px;
-  padding: 0;
-}
-.container header p {
-  color: #666;
-  margin: 0 0 35px;
-}
-.container footer {
-  width: 100%;
-  padding: 15px 40px;
-  margin: 0 0 -40px -40px;
-  color: #666;
-  font-size: 12px;
-  text-align: center;
-}
-.container footer a {
-  color: #333;
-  text-decoration: none;
-}
-.container footer .fa {
-  color: #e74c3c;
-}
-/* Magic Starts here */
-.form {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
-}
-.form:before,
-.form:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-.form .field {
-  width: 50%;
-  padding: 20px 20px 5px;
-  border-bottom: 1px solid #e5e5e5;
-  box-sizing: border-box;
-  float: left;
-  transition: 0.3s linear;
-}
-.form .field:nth-child(2n) {
-  border-left: 1px solid #e5e5e5;
-}
-.form .field label {
-  color: #a1a1a1;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.form .field input {
-  outline: none;
-  background: none;
-  width: 100%;
-  border: 0;
-  padding: 5px 0;
-  color: #666;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: 0.3s linear;
-}
-.form .checkbox {
-  display: block;
-  clear: both;
-  text-align: center;
-  margin-bottom: 25px;
-  padding-top: 30px;
-  color: #a1a1a1;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.form .checkbox a {
-  color: #009ddc;
-  text-decoration: none;
-}
-.form input[type="checkbox"] label {
-  background: #000;
-  height: 30px;
-  border: none;
-}
-.form input[type="submit" value="login"] button {
-  cursor: pointer;
-  display: block;
-  background: #eb5635;
-  width: 180px;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  padding: 16px 0;
-  border: none;
-  border-radius: 100px;
-  color: #fff;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: 0.2s linear;
-}
-.form button:hover {
-  background: #f07d63;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    backface-visibility: hidden;
 }
 
+div.well{
+  height: 250px;
+} 
 
-body {margin:0;padding:0;}
-
-#horizontal-scroll {
-	width: 100%; 
-	height: 100%; 
-	background-image: url(backdrop.png);
-	background-position: 0px 0px;
-	background-repeat: repeat-x repeat-y;
-	animation: animatedBackground 10s linear infinite;
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
 
-#wrapper
-{
-width:800px;
-background-color:#f2f2e8;
-position:relative;
-left:50%;
-margin-left:-400px;
-border-radius: 10px;
--moz-border-radius: 10px;
-padding:5px;
+.Absolute-Center.is-Responsive {
+  width: 50%; 
+  height: 50%;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 40px;
 }
 
-@keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 100% 0; }
+#logo-container{
+  margin: auto;
+  margin-bottom: 10px;
+} 
+
+#overlay {
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    opacity: 0.08;
 }
 
-h1 {
-	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
+#scene {
+    padding: 0;
+    margin: 0;
+    width: 115%;
+    height: 120vh;
+    overflow: hidden;
+    top: -5%;
+    left: -5%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
 }
-h3 {
-	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 15.4px;
+
+main {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;    
 }
-p {
-	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 20px;
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 550px;
+    z-index: 101;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    text-align: center;
 }
-blockquote {
-	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-size: 21px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 30px;
+
+.wrapper img {
+  width: 350px;
+  height: auto;
 }
-pre {
-	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-size: 13px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 18.5714px;
+
+.layer {
+    width: 110%;
+    height: 120vh;
+    overflow: hidden;
 }
+
+.layer2 {
+    background-image: url(http://puu.sh/orQMo/b6f1308f9b.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -5%;
+    top: -5%;
+}
+
+.layer1 {
+    background-image: url(http://puu.sh/orQMo/b6f1308f9b.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -5%;
+    top: -5%;
+}
+
+@media (max-width:1200px) and (min-width:700px) {
+     .wrapper img {
+        width: 220px;
+        height: auto;
+    } 
+}
+
+@media (max-width:700px) {
+    .layer2 {
+        background-size: cover;
+        background-position: center;
+        width: 167%;
+        height: 77vh;
+        left: -69%;
+        top: 27%;
+    }
+    
+    .layer1 {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 115%;
+        left: -5%;
+        top: -1%;
+    }    
+    
+    .wrapper img {
+        width: 180px;
+        height: auto;
+    }
+}
+

@@ -52,7 +52,7 @@ if (logged_in() == false) {
 			echo "<p>Username: {$user['username']}</p>";
 			echo "<p>Status: {$status}</p>";			
 		} else { // 0 = invalid user id
-			echo "<p><b>Error:</b> Invalid user ID.</p>";
+			echo "<p><font size='4'><b>The user you are looking for was not found!</b></font><br> They may have changed their username.<br>The account may be temporarily unavailable due to security or abuse issues.<br>You may have made a typo!</p>";
 		}
 }
 

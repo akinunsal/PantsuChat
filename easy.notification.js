@@ -1,7 +1,7 @@
 /*
  * 	Easy Notification - jQuery plugin
  *	written by akinunsal for:	
- *	http://pantsuchat.moe
+ *	http://pantsuchat.tk
  *
  *	Copyright (c) 2015 akinunsal
  *	licensed under the

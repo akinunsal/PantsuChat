@@ -1,0 +1,513 @@
+
+<!-- saved from url=(0033)http://aaronin.jp/ddrallcalc.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>StepMania/DDR Dance Level Calculator</title>
+<script language="JavaScript">
+function adCalc(form)
+{
+var marv = eval(form.marv.value);
+var perf = eval(form.perf.value);
+var grea = eval(form.grea.value);
+var good = eval(form.good.value);
+var boo = eval(form.boo.value);
+var miss = eval(form.miss.value);
+var ok = eval(form.ok.value);
+var ng = eval(form.ng.value);
+var total = 0;
+var allfreeze = 0;
+var Tmaxpnt = 0;
+var maxpnt = 0;
+var Tpnt=0;
+var pnt = 0;
+var oldpnt = 0;
+var perc = 0;
+var oldperc = 0;
+var Tperc = 0;
+var ITGpnt=0;
+var ITGmaxpnt=0;
+var ITGperc=0;
+var oni7earned=0;
+var oni7max=0;
+var oni7perc=0;
+var oni8earned=0;
+var oni8max=0;
+var oni8perc=0;
+var MAXlevel = "";
+var G3level = "";
+var G4level = "";
+var G5level = "";
+var TNlevel = "";
+var ITGlevel="";
+var marvp = 0;
+var perfp = 0;
+var greap = 0;
+var goodp = 0;
+var boop = 0;
+var missp = 0;
+var pivot=0;
+var spread=0;
+
+if (form.marv.value == "")  { marv=0;}
+if (form.perf.value == "")  { perf=0;}
+if (form.grea.value == "")  { grea=0;}
+if (form.good.value == "")  { good=0;}
+if (form.boo.value == "")  { boo=0;}
+if (form.miss.value == "")  { miss=0;}
+if (form.ok.value == "")  { ok=0;}
+if (form.ng.value == "")  { ng=0;}
+
+total = marv + perf + grea + good + boo + miss;
+allfreeze = ok + ng;
+form.total.value = total;
+form.allfreeze.value=allfreeze;
+
+marvp = parseInt((marv / total) * 10000)/100;
+perfp = parseInt((perf / total) * 10000)/100;
+greap = parseInt((grea / total) * 10000)/100;
+goodp = parseInt((good / total) * 10000)/100;
+boop =  parseInt((boo /  total) * 10000)/100;
+missp = parseInt((miss / total) * 10000)/100;
+form.marvp.value = marvp;
+form.perfp.value = perfp;
+form.greap.value = greap;
+form.goodp.value = goodp;
+form.boop.value = boop;
+form.missp.value = missp;
+
+ITGmaxpnt = 5 * (marv + perf + grea + good + boo + miss) + 5 * (ok + ng);
+Tmaxpnt = 3 * (marv + perf + grea + good + boo + miss) + 6 * (ok + ng);
+maxpnt = 2 * (marv + perf + grea + good + boo + miss) + 6 * (ok + ng);
+oni7max = 2 * (marv + perf + grea + good + boo + miss + ok + ng);
+oni8max = 3 * (marv + perf + grea + good + boo + miss + ok + ng);
+
+ITGpnt = (5 * marv) + (4 * perf) + (2 * grea) + (0 * good) - (6 * boo) + (5 * ok) - (12 * miss); 
+pnt = (2 * (marv + perf)) + grea - (4 * boo) - (8 * miss) + (6 * ok);
+oldpnt= (2 * (marv + perf)) + grea - (4 * boo) - (5 * miss);
+Tpnt = (3 * marv) + (2 * perf) + grea - (4 * boo) - (8 * miss) + (6 * ok);
+oni7earned = 2 * (marv + perf + ok) + grea;
+oni8earned = 3 * (marv + ok) + 2 * perf + grea;
+
+form.ITGpnt.value=ITGpnt;
+form.ITGmaxpnt.value=ITGmaxpnt;
+form.Tpnt.value=Tpnt;
+form.Tmaxpnt.value=Tmaxpnt;
+form.maxpnt.value = maxpnt;
+form.maxpnt2.value=maxpnt;
+form.oldpnt.value=oldpnt;
+form.pnt.value = pnt;
+form.oni7max.value=oni7max;
+form.oni8max.value=oni8max;
+form.oni7earned.value=oni7earned;
+form.oni8earned.value=oni8earned;
+
+perc = ((pnt / maxpnt) * 100);
+oldperc=((oldpnt / maxpnt) * 100);
+Tperc=((Tpnt / Tmaxpnt) * 100);
+ITGperc=((ITGpnt / ITGmaxpnt) * 100);
+oni7perc=(oni7earned/oni7max)*100;
+oni8perc=(oni8earned/oni8max)*100;
+
+var N = marv + perf + grea + good + boo + miss + ok + ng;
+var T = N / (oni8earned-N);
+var X = (T - 1 + Math.sqrt(T*T + 6*T - 3) ) / 2;
+var M = (oni8earned - N) / (2 + X);
+pivot = 100 * (2*M + 2*M*X + M*X*X) / (2 * N);
+spread = oni7perc - pivot;
+
+form.perc.value = perc;
+form.oldperc.value=oldperc;
+form.Tperc.value=Tperc;
+form.ITGperc.value=ITGperc;
+form.oni7perc.value=oni7perc;
+form.oni8perc.value=oni8perc;
+form.pivot.value=pivot;
+form.spread.value=spread;
+
+G3level="D"; G4level="C"; G5level="D";
+if (oldperc>=50) {G3level="C"; G5level="C";}
+if (oldperc>=64) {G3level="B"; G4level="B"; G5level="B";}
+if (oldperc>=80) {G3level="A"; G5level="A";}
+if (good==0 && boo==0 && miss==0 && grea!=0 && greap>20) {G3level="S"; G4level="A"; G5level="AA";}
+if (good==0 && boo==0 && miss==0 && grea!=0 && greap<=20) {G3level="SS"; G4level="A"; G5level="AA";}
+if (good==0 && boo==0 && miss==0 && grea==0) {G3level="SSS"; G4level="AA"; G5level="AAA";}
+if (allfreeze!=0) {G3level="---"; G4level="---"; G5level="---";}
+form.G3level.value=G3level;
+form.G4level.value=G4level;
+form.G5level.value=G5level;
+
+MAXlevel = "D";
+if (perc >= 45) {MAXlevel = "C";}
+if (perc >= 65) {MAXlevel = "B";}
+if (perc >= 80) {MAXlevel = "A";}
+if (perc >= 93) {MAXlevel = "AA";}
+if (perc == 100) {MAXlevel = "AAA";}
+form.MAXlevel.value = MAXlevel;
+
+TNlevel="D";
+if (Tpnt*3 >= Tmaxpnt) {TNlevel = "C";}
+if (Tperc*2 >= 100) {TNlevel = "B";}
+if (Tpnt*3 >= Tmaxpnt*2) {TNlevel = "A";}
+if (Tpnt*6 >= Tmaxpnt*5) {TNlevel = "AA";}
+if (Tperc >= 95) {TNlevel = "AAA";}
+form.TNlevel.value=TNlevel;
+
+ITGlevel="D";
+if (ITGperc >= 50) {ITGlevel = "C";}
+if (ITGperc >= 70) {ITGlevel = "B";}
+if (ITGperc >= 90) {ITGlevel = "A";}
+if (good==0 && boo==0 && miss==0) {ITGlevel = "AA";}
+if (ITGperc >= 95) {ITGlevel = "S";}
+if (grea==0 && good==0 && boo==0 && miss==0) {ITGlevel = "AAA";}
+if (ITGperc >= 97) {ITGlevel = "SS";}
+if (ITGperc >= 100) {ITGlevel = "AAAA";}
+
+form.ITGlevel.value=ITGlevel;
+
+if (maxpnt==0)
+{
+form.G3level.value="E";
+form.G4level.value="D";
+form.G5level.value="E";
+form.MAXlevel.value="E";
+form.TNlevel.value="E";
+form.ITGlevel.value="E";
+}
+
+}
+</script>
+</head>
+
+<body background="./ddrcalc_files/bcgd.jpg" bgcolor="#000000" link="#ffff00" text="#ffffff" vlink="#ffff00">
+
+<center><br><br><br>
+
+The All-DDR Score Calculator:<br>
+<h6>Original Design by Aaron C., coded by Koizumi_Hanayo</h6>
+<p>
+Enter the number of each type of step into the left column entries (any field
+left blank will be treated as if it had a value of "0"), and click "Grade" to find out your dance level,
+or play around with the values to find out what you need for a certain dance level. Scroll to bottom for mix information and notes.
+<br>NOTE : This code only allows numerical input. Letters will cause an error.
+</p><p>
+</p><form method="post">
+<table border="0" cellpadding="5"><tbody><tr><td>
+
+<table border="1" cellpadding="3">
+<tbody><tr>
+<td align="center">Marvelous:</td>
+<td align="center"><input type="text" name="marv" size="8" value="" onfocus="select()"></td>
+</tr>
+<tr>
+<td align="center">Perfect:</td>
+<td align="center"><input type="text" name="perf" size="8" value="" onfocus="select()"></td>
+</tr>
+<tr>
+<td align="center">Great:</td>
+<td align="center"><input type="text" name="grea" size="8" value="" onfocus="select()"></td>
+</tr>
+<tr>
+<td align="center">Good:</td>
+<td align="center"><input type="text" name="good" size="8" value="" onfocus="select()"></td>
+
+</tr>
+<tr>
+<td align="center">Boo:</td>
+<td align="center"><input type="text" name="boo" size="8" value="" onfocus="select()"></td>
+
+</tr>
+<tr>
+<td align="center">Miss:</td>
+<td align="center"> <input type="text" name="miss" size="8" value="" onfocus="select()"></td>
+
+</tr>
+<tr>
+<td align="center">OK:</td>
+<td align="center"><input type="text" name="ok" size="8" value="" onfocus="select()"></td>
+</tr>
+<tr>
+<td align="center">NG:</td>
+<td align="center"><input type="text" name="ng" size="8" value="" onfocus="select()"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="button" value="Grade" onclick="adCalc(this.form)"> <input type="reset" value="reset"></td>
+</tr>
+</tbody></table>
+</td><td>
+<table border="">
+<tbody><tr><td colspan="2" align="center">Information</td></tr>
+<tr><td align="right">Marvelous: <input type="text" name="marvp" size="4" value="" onfocus="select()" readonly="">%</td>
+<td align="center">Total steps:
+<input type="text" name="total" size="8" value="" onfocus="select()" readonly=""></td></tr>
+<tr><td align="right">Perfect: <input type="text" name="perfp" size="4" value="" onfocus="select()" readonly="">%</td></tr>
+<tr><td align="right">Great: <input type="text" name="greap" size="4" value="" onfocus="select()" readonly="">%</td></tr>
+<tr><td align="right">Good: <input type="text" name="goodp" size="4" value="" onfocus="select()" readonly="">%</td></tr>
+<tr><td align="right">Boo: <input type="text" name="boop" size="4" value="" onfocus="select()" readonly="">%</td></tr>
+<tr><td align="right">Miss: <input type="text" name="missp" size="4" value="" onfocus="select()" readonly="">%</td></tr>
+<tr><td></td><td align="center">Total freezes:
+<input type="text" name="allfreeze" size="8" value="" onfocus="select()" readonly=""></td></tr>
+</tbody></table>
+</td>
+<td align="center">
+<table border="">
+<tbody><tr><td align="right">
+MAX DP:
+<input type="text" name="pnt" size="8" value="" onfocus="select()" readonly=""> / <input type="text" name="maxpnt" size="8" value="" onfocus="select()" readonly=""> = <input type="text" name="perc" size="4" value="" onfocus="select()" readonly="">%
+</td></tr>
+<tr><td align="right">
+OLD DP:
+<input type="text" name="oldpnt" size="8" value="" onfocus="select()" readonly=""> / <input type="text" name="maxpnt2" size="8" value="" onfocus="select()" readonly=""> = <input type="text" name="oldperc" size="4" value="" onfocus="select()" readonly="">%
+</td></tr>
+<tr><td align="right">
+MIGS DP:
+<input type="text" name="Tpnt" size="8" value="" onfocus="select()" readonly=""> / <input type="text" name="Tmaxpnt" size="8" value="" onfocus="select()" readonly=""> = <input type="text" name="Tperc" size="4" value="" onfocus="select()" readonly="">%
+</td></tr>
+<tr><td align="right">
+ITG DP:
+<input type="text" name="ITGpnt" size="8" value="" onfocus="select()" readonly=""> / <input type="text" name="ITGmaxpnt" size="8" value="" onfocus="select()" readonly=""> = <input type="text" name="ITGperc" size="4" value="" onfocus="select()" readonly="">%
+</td></tr>
+
+<tr><td align="right">
+MAX2 ONI:
+<input type="text" name="oni7earned" size="8" value="" onfocus="select()" readonly=""> / <input type="text" name="oni7max" size="8" value="" onfocus="select()" readonly=""> = <input type="text" name="oni7perc" size="4" value="" onfocus="select()" readonly="">%
+</td></tr>
+
+<tr><td align="right">
+EX ONI:
+<input type="text" name="oni8earned" size="8" value="" onfocus="select()" readonly=""> / <input type="text" name="oni8max" size="8" value="" onfocus="select()" readonly=""> = <input type="text" name="oni8perc" size="4" value="" onfocus="select()" readonly="">%
+</td></tr>
+
+</tbody></table>
+<hr>
+<table border="0" style="width:100%;">
+<tbody><tr>
+<td>
+MAX:</td><td><input type="text" name="MAXlevel" size="4" value="" onfocus="select()" readonly=""></td>
+<td>
+3rd:</td><td><input type="text" name="G3level" size="4" value="" onfocus="select()" readonly=""></td>
+</tr>
+<tr>
+<td>
+5th:</td><td><input type="text" name="G5level" size="4" value="" onfocus="select()" readonly=""></td>
+<td>
+MIGS:</td><td><input type="text" name="TNlevel" size="4" value="" onfocus="select()" readonly=""></td>
+</tr>
+<tr>
+<td>
+4th:</td><td><input type="text" name="G4level" size="4" value="" onfocus="select()" readonly=""></td>
+<td>
+ITG:</td><td><input type="text" name="ITGlevel" size="4" value="" onfocus="select()" readonly=""></td>
+</tr>
+</tbody></table>
+<hr>
+<table border="" style="width:100%;">
+<tbody><tr><td width="50%"><center>
+Pivot:     <input type="text" name="pivot" size="4" value="" onfocus="select()" readonly="">%
+</center></td><td><center>
+Spread:     <input type="text" name="spread" size="4" value="" onfocus="select()" readonly="">%
+</center></td>
+</tr>
+</tbody></table>
+ 
+
+
+
+</td></tr>
+</tbody></table>
+
+</form>
+<p><table><tbody><tr>
+<td><center>Dance Points Reference:</center><p>
+
+<table border="">
+<tbody><tr>
+<td>Judge</td>
+<td>MAX</td>
+<td>OLD</td>
+<td>MIGS</td>
+<td>ITG</td>
+</tr>
+<tr>
+<td><font color="#ffff88">Marvelous</font></td>
+<td rowspan="2">+2</td>
+<td rowspan="2">+2</td>
+<td>+3</td>
+<td>+5</td>
+</tr>
+<tr>
+<td><font color="#ffff00">Perfect</font></td>
+
+
+<td>+2</td>
+<td>+4</td>
+</tr>
+<tr>
+<td><font color="#00ff00">Great</font></td>
+<td>+1</td>
+<td>+1</td>
+<td>+1</td>
+<td>+2</td>
+</tr>
+<tr>
+<td><font color="#00ffff">Good</font></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><font color="#ff00ff">Boo</font></td>
+<td>-4</td>
+<td>-4</td>
+<td>-4</td>
+<td>-6</td>
+</tr>
+<tr>
+<td><font color="#ff0000">Miss</font></td>
+<td>-8</td>
+<td>-5</td>
+<td>-8</td>
+<td>-12</td>
+</tr>
+<tr>
+<td><font color="#ff6600">OK</font></td>
+<td>+6</td>
+<td></td>
+<td>+6</td>
+<td>+5</td>
+</tr>
+<tr>
+<td><font color="#ff0000">NG</font></td>
+<td>0</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</p></td>
+<td>
+<font color="#000000">---------------
+</font></td>
+<td>
+
+<center>Grade Requirements: (Portion of max. DP)</center><p>
+
+<table border="">
+<tbody><tr>
+<td>Level</td>
+<td>MAX</td>
+<td>5th</td>
+<td>4th</td>
+<td>3rd</td>
+<td>MIGS</td>
+<td>ITG</td>
+</tr>
+<tr>
+<td><font color="#00ffff">AAAA</font></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>100%</td>
+</tr>
+<tr>
+<td><font color="#00ffff">AAA</font></td>
+<td>100%</td>
+<td>FC/100</td>
+<td></td>
+<td><font color="#00eeee">SSS</font>:FC/100</td>
+<td>19/20</td>
+<td>
+<table width="0" cellpadding="0">
+<tbody><tr><td><font color="#00ffff">SS</font>:</td><td>97%</td></tr>
+<tr><td><font color="#00ffff">AAA</font>:</td><td>FC/100</td></tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td><font color="#66ff66">AA</font></td>
+<td>93%</td>
+<td>FC</td>
+<td>FC/100</td>
+<td>
+
+<table width="0" cellpadding="0">
+<tbody><tr><td><font color="#ffdd00">SS</font>:</td><td>FC/80</td></tr>
+<tr><td><font color="#c0c0c0">S</font>:</td><td>FC</td></tr>
+</tbody></table>
+
+
+</td>
+<td>5/6</td>
+<td>
+<table width="0" cellpadding="0">
+<tbody><tr><td><font color="#66ff66">S</font>:</td><td>95%</td></tr>
+<tr><td><font color="#66ff66">AA</font>:</td><td>FC</td></tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td><font color="#00dd00">A</font></td>
+<td>80%</td>
+<td>80%</td>
+<td>FC</td>
+<td>80%</td>
+<td>2/3</td>
+<td>90%</td>
+</tr>
+<tr>
+<td><font color="#0099ff">B</font></td>
+<td>65%</td>
+<td>64%</td>
+<td>64%</td>
+<td>64%</td>
+<td>1/2</td>
+<td>70%</td>
+</tr>
+<tr>
+<td><font color="#ff00ff">C</font></td>
+<td>45%</td>
+<td>50%</td>
+<td>LPG</td>
+<td>50%</td>
+<td>1/3</td>
+<td>50%</td>
+</tr>
+<tr>
+<td><font color="#ff0000">D</font></td>
+<td>LPG</td>
+<td>LPG</td>
+<td>FAIL</td>
+<td>LPG</td>
+<td>LPG</td>
+<td>LPG</td>
+</tr>
+<tr>
+<td>E</td>
+<td>FAIL</td>
+<td>FAIL</td>
+<td></td>
+<td>FAIL</td>
+<td>FAIL</td>
+<td>FAIL</td>
+</tr>
+</tbody></table>
+</p></td></tr></tbody></table>
+</p><p></p></center>
+Note: A mix with a blank for a grade does not feature that grade.<br>
+FC/XXX: a Full Combo is required with at least XXX% perfects-or-better.<br>
+LPG stands for Lowest Passing Grade.<br> 
+FAIL means you have either lost your life bar or the song has zero steps.<br>
+Max. DP is calculated assuming all steps are Marvelous, and all freezes are OK.<br>
+If more than one dance level is listed in a box, they are ranked in descending order.
+<p>
+**Grading systems from 1st and 2nd mix are not available here, because I am almost positive that your max. combo is factored into the grade for 1st, and 2nd mix might be score-based. Grading systems for 3rd, 4th, and 5th were solved by Taren.<br>
+**ITG stands for In The Groove. Read about it <a href="http://www.roxorgames.com/itg.html">here</a>.<br>
+**MIGS stands for "Marvelous Incorporated Grading System". It is an alternative grading system designed by Taren that factors in Marvelous steps. Using MIGS, you can achieve a AAA grade without all perfects-or-better, but a poor Marvelous count will severely hurt your grade.<br>
+**For more information on all DDR scoring systems, check out Aaron's <a href="http://aaroninjapan.com/ddr2.html">page</a>. To read Taren's breakdown of the BM and IIDX scoring systems, go <a href="http://www.angelfire.com/ex/ddr1/iidxscore.html">here</a>.<br>
+***Pivot/Spread: Used for Extreme oni courses- The pivot is the MAX2 Oni percentage you would have received if your Marvelous/Perfect ratio and Perfect/Great ratio were the same, and you had the same EX point total. The Spread is the difference between the Pivot and your actual MAX2 percentage. A negative Spread means your Marvelous/Perfect ratio was higher than your Perfect/Great ratio, and a positive means the opposite.<br>
+</p><h6>Last update 12 Apr 2016 </h6><br>
+<br>
+
+
+
+</p></body></html>

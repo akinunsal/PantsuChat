@@ -5,14 +5,25 @@
 	if (logged_in() == true) {
 		redirect_to("profile.php");
 	}
+
+    $bg = array('/PantsuStyle/logo/pant-1.png', '/PantsuStyle/logo/pant-2.png', '/PantsuStyle/logo/pant-3.png', '/PantsuStyle/logo/pant-4.png', '/PantsuStyle/logo/pant-5.png','/PantsuStyle/logo/pant-6.png', '/PantsuStyle/logo/pant-7.png', ); // array of filenames
+
+  $i = rand(0, count($bg)-1); // generate random number size of the array
+  $selectedBg = "$bg[$i]"; // set variable equal to which random filename was chosen
+
+
 ?>
 <html>
 <head>
 	<title>User registration form</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style-register.css">
 </head>
-<body>	
-<h1>User registration form</h1>
-<hr />
+<body>
+    <div id="horizontal-scroll">
+    <img class="displayed" src="<?php echo $selectedBg; ?>" alt="Pantsu!">
+    <img class="displayed" src=/PantsuStyle/logo/Citation.png>
+    <hr />
 <!-- The HTML registration form -->
 <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 	Username: <input type="text" name="username" /><br />
@@ -20,9 +31,11 @@
 	First name: <input type="text" name="first_name" /><br />
 	Last name: <input type="text" name="last_name" /><br />
 	Email: <input type="type" name="email" /><br />
+    <input type="checkbox" name="skip" value="skipped">I agree i am of legal age to view the content for this site. <br />
 
-	<input type="submit" name="submit" value="Register" />
-	<a href="login.php">I already have an account...</a>
+	<!-- <input type="submit" name="submit" value="Register" /> -->
+    <input type="image" src='/PantsuStyle/mouseoutbutton.png' width='322' height='133' type="submit" name="submit" value="Register" onmouseover="this.src='/PantsuStyle/mouseoverglow.png';" onmouseout="this.src='/PantsuStyle/mouseoutbutton.png';" /><br />
+	<a href="login.php">B-But I already have an account... (&#8807;&#65103;&#8806;&#10047;)</a>
 </form>
 <?php
 if (isset($_POST['submit'])) {
@@ -71,5 +84,7 @@ if (isset($_POST['submit'])) {
 }
 ?>	
 <hr />
+    </div>
 </body>
+    
 </html>

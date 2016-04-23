@@ -1,9 +1,18 @@
 @import "compass/css3";
 
+
+#horizontal-scroll {
+	width: 100%; 
+	height: 100%; 
+	background-image: url(backdrop.png);
+	background-position: 0px 0px;
+	background-repeat: repeat-x repeat-y;
+	animation: animatedBackground 10s linear infinite;
+}
 /* Form Styles */
 body {
   background: #f8f8f8;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -14,10 +23,12 @@ body {
   margin: 80px auto;
 }
 .container header {
-  text-align: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 .container header h2 {
   color: #333;
+  font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   font-weight: 300;
   line-height: 24px;
@@ -26,6 +37,7 @@ body {
 }
 .container header p {
   color: #666;
+  font-family: 'Open Sans', sans-serif;
   margin: 0 0 35px;
 }
 .container footer {
@@ -34,10 +46,12 @@ body {
   margin: 0 0 -40px -40px;
   color: #666;
   font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 .container footer a {
   color: #333;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
 }
 .container footer .fa {
@@ -79,7 +93,7 @@ body {
   border: 0;
   padding: 5px 0;
   color: #666;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -93,7 +107,7 @@ body {
   margin-bottom: 25px;
   padding-top: 30px;
   color: #a1a1a1;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -119,7 +133,7 @@ body {
   border: none;
   border-radius: 100px;
   color: #fff;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
