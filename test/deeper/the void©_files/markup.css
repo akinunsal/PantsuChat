@@ -1,0 +1,44 @@
+/* Elements */
+img{border:0px;max-width:1000px}
+@media only screen and (max-device-width: 600px){img{max-width:400px !important;}}
+ul,ol,pre,dl,p{margin-top:0px;margin-bottom:0px}
+pre,code{white-space:pre;font-size:10pt}
+iframe{border:0px}
+pre,code,input,textarea{font-family:"Courier New",monospace,serif}
+
+/* Links */
+a.redlink{text-decoration:none;border-bottom:1px dotted gray;color:red !important}
+a.redlink:visited{color:red !important}
+a.redlink:hover{border-bottom:1px solid gray}
+a.attachlink{background:url(http://assets.sick.bike/attach.png) center right no-repeat;padding-right:13px}
+a.categorylink{color:green !important}
+a.categorylink:visited{color:green !important}
+a.categorylink:first-child:before{display:inline-block;margin-right:5px;content:"Categories:";text-decoration:none;color:black}
+a.varlink{text-decoration:none}
+
+/* Blocks */
+.vspace{margin-top:1.33em !important}
+.indent{margin-left:40px}
+.outdent{margin-left:40px;text-indent:-40px}
+.nb{border:2px solid red;padding:2px;display:inline-block}
+.blockquote{border-left:4px solid #dcdcdc;margin:10px 0px 10px 10px;padding-left:15px}
+.rfloat{float:right;margin-left:0.5em}
+.frame{border:1px solid #CCC;padding:4px;background-color:#F9F9F9}
+
+/* Styles */
+.sc{font-variant:small-caps}
+@-moz-document url-prefix(){.sc{font-size:11pt;line-height:1em}}
+
+/* Diffs */
+.diffbox{width:570px;border-left:1px #999999 solid;margin-top:1.33em}
+.diffauthor{font-weight:bold}
+.diffchangesum{font-weight:bold}
+.difftime{font-family:verdana,sans-serif;font-size:66%;background-color:#dddddd;line-height: 2em}
+.difftype{clear:both;font-family:verdana,sans-serif;font-size:66%;font-weight:bold}
+.diffadd{border-left:5px #99ff99 solid;padding-left:5px}
+.diffdel{border-left:5px #FF7E85 solid;padding-left:5px}
+.diffrestore{clear:both;font-family:verdana,sans-serif;font-size:66%;margin:1.5em 0px}
+.diffmarkup{font-family:monospace}
+.diffmarkup del{background:#FF7E85;text-decoration:none}
+.diffmarkup ins{background:#99ff99;text-decoration:none}
+.diffradio{float:right}

@@ -50,7 +50,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-def btn-block" value="login">Login</button>
+                        <button type="submit" name="submit" class="btn btn-def btn-block" value="submit">Login</button>
                     </div>
                     <div class="form-group text-center">
                         <a href="forgot.php">Forgot Password</a>&nbsp;|&nbsp;<a href="register.php">Support</a>  
@@ -101,7 +101,6 @@
         ?>
             </form>
         </div>
-        <hr />
     </div>
 </main>
 </body>

@@ -63,6 +63,7 @@ if (logged_in() == true) {
 	echo '<a href="login.php">Login</a> | <a href="register.php">Register</a>';
 }
 ?>
+    <a href="private.php">Go back to main area</a>
 <hr />
 </body>
 </html>

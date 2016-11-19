@@ -37,20 +37,7 @@ function alertAndRedirect(text) {
         <a href="edit_osuname.php">Edit osu! Username</a><br />
         <a href="edit_account.php">Edit Account</a><br /> 
         <a href="logout.php">Logout</a>
-        <script type="text/javascript" src="http://discord.deliriousdrunkards.com/discord.min.js"></script>
-<script type="text/javascript">
-  discordWidget.init({
-    serverId: '114367543354982400',
-    title: 'DesDesPoi',
-    join: true,
-    alphabetical: false,
-    theme: 'dark',
-    hideChannels: ['Total War: Atilla', 'Terraria', 'BnS'],
-    showAllUsers: true,
-    allUsersDefaultState: true
-  });
-  discordWidget.render();
-</script>
+<iframe src="https://discordapp.com/widget?id=114367543354982400&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 
 <div class="discord-widget"></div>
     </div>  
