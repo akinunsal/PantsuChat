@@ -79,7 +79,7 @@ main {
 }
 
 .layer2 {
-    background-image: url(http://puu.sh/orQMo/b6f1308f9b.jpg);
+    background-image: url(bglog.jpg);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -90,7 +90,7 @@ main {
 }
 
 .layer1 {
-    background-image: url(http://puu.sh/orQMo/b6f1308f9b.jpg);
+    background-image: url(bglog.jpg);
     background-position: center;
     background-size: cover;
     position: absolute;
