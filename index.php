@@ -1,6 +1,6 @@
 <?php
     // First we execute our common code to connection to the database and start the session 
-    require("common.php"); 
+   // require("common.php"); 
 
   $bg = array('/PantsuStyle/logo/pant-1.png', '/PantsuStyle/logo/pant-2.png', '/PantsuStyle/logo/pant-3.png', '/PantsuStyle/logo/pant-4.png', '/PantsuStyle/logo/pant-5.png','/PantsuStyle/logo/pant-6.png', '/PantsuStyle/logo/pant-7.png', ); // array of filenames
 
@@ -16,20 +16,12 @@
 </head>
 <body>
     <div id="horizontal-scroll">
-        <!-- fuck this shit code innit
-    <script type="text/javascript" src="easy.notification.js"></script>
-    <script type="text/javascript" src="notification.js"></script>
-    <script type="text/javascript">
-        $(function(){		   
-        $.easyNotification();	
-	});
-        -->
 </script>
         </br></br></br></br></br>
         <img class="displayed" src="<?php echo $selectedBg; ?>" alt="Pantsu!">
         <img class="displayed" src=/PantsuStyle/logo/Citation.png>
         <div id="content">
-            <a href="http://pantsuchat.tk/register.php"><img class="signup" src=signup.png></a><a href="http://pantsuchat.tk/login.php"><img class="login" src=login.png></a>
+            <div class=content-right><a href="register.php"><img class="signup" src=signup.png></a><a href="login.php"><img class="login" src=login.png></a>
         </div>
     </div>
 </body>
