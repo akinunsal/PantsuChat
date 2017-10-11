@@ -105,7 +105,7 @@
 </main>
 </body>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
-<script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js'></script>
+<script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js'></script> <!-- TODO: MAKE IT LOCAL -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/parallax/1.1.1/jquery.parallax.min.js'></script>
 <script src="js/login.js"></script>
 </html>
