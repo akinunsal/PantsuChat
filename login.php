@@ -1,10 +1,10 @@
     <?php 
-	require_once("functions.php");
+	/*require_once("functions.php");
 	require_once("db-const.php");
 	session_start();
 	if (logged_in() == true) {
 		redirect_to("profile.php");
-	}
+	}*/
     // ALREADY EXPLAINED THIS OVER IN INDEX.PHP
     $bg = array('/PantsuStyle/logo/pant-1.png', '/PantsuStyle/logo/pant-2.png', '/PantsuStyle/logo/pant-3.png', '/PantsuStyle/logo/pant-4.png', '/PantsuStyle/logo/pant-5.png','/PantsuStyle/logo/pant-6.png', '/PantsuStyle/logo/pant-7.png', );
 
