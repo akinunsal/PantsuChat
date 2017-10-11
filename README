@@ -3,3 +3,9 @@ Pantsuchat is a work-in-progress group chat tool with an authentication system.
 We plan on expanding this simple chat system to a full-fledged one with badges, user levels, game api integrations and much more!
 
 If you have any ideas, please comment them or create a pull request so we can check it out. we'll gladly accept any ideas or new code :D
+
+CURRENT TODO:
+\- Upgrade bootstrap from v3 to v4
+\- Make sure bootstrap runs through site server instead of third party linking
+\- Rebuild database from ground up and upload empty version to github
+\- actually do the above
